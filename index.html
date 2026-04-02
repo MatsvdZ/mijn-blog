@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="intro-screen" id="introScreen">
+      <div class="intro-overlay"></div>
+
+      <div class="intro-content">
+        <p class="intro-label">WELCOME PLAYER</p>
+        <h1 class="intro-title">MEESTERSCHAP BLOG</h1>
+        <p class="intro-subtitle">Start jouw reis door mijn leerproces</p>
+        <button class="start-button" id="startButton">PRESS START</button>
+      </div>
+    </div>
+
+    <main class="app">
+      <section class="screen home-screen active" id="home">
+        <div class="screen-inner">
+          <div class="home-content">
+            <h1 class="home-title">Meesterschap Blog</h1>
+            <p class="home-subtitle">Kies een level om verder te gaan</p>
+
+            <div class="carousel-wrapper">
+              <button class="nav prev" aria-label="Vorige slide">◀</button>
+
+              <div class="carousel">
+                <div class="card" data-target="weekly-nerd">
+                  <h2>Weekly Nerd</h2>
+                  <p>
+                    Verslagen, tools, voorbeelden en ideeën die ik interessant
+                    vond.
+                  </p>
+                </div>
+
+                <div class="card" data-target="sprint-0">
+                  <h2>Sprint 0</h2>
+                  <p>
+                    Mijn beginpunt, aanpak en nieuwe inzichten uit de eerste
+                    sprint.
+                  </p>
+                </div>
+
+                <div class="card" data-target="hackathon">
+                  <h2>Hackathon</h2>
+                  <p>Mijn bijdrage, de uitkomst en wat ik ervan heb geleerd.</p>
+                </div>
+
+                <div class="card" data-target="vakken">
+                  <h2>Vakken</h2>
+                  <p>
+                    De belangrijkste lessen en inzichten uit verschillende
+                    vakken.
+                  </p>
+                </div>
+
+                <div class="card" data-target="meesterproef">
+                  <h2>Meesterproef</h2>
+                  <p>Mijn inbreng, proces, eindresultaat en reflectie.</p>
+                </div>
+
+                <div class="card" data-target="gesprekken">
+                  <h2>Gesprekken</h2>
+                  <p>
+                    Reflecties op drie gesprekken en een blik op de toekomst.
+                  </p>
+                </div>
+              </div>
+
+              <button class="nav next" aria-label="Volgende slide">▶</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen content-screen" id="weekly-nerd">
+        <div class="screen-inner">
+          <div class="top-bar">
+            <button class="back-button" data-back="home">
+              ← Terug naar home
+            </button>
+          </div>
+
+          <div class="content-card">
+            <h1>Weekly Nerd</h1>
+            <p>
+              Hier komt jouw overzicht van alle Weekly Nerd sessies. Je kunt per
+              sessie kort beschrijven welke onderwerpen zijn besproken, welke
+              tools je interessant vond en welke ideeën je hebt meegenomen.
+            </p>
+
+            <h2>Wat je hier kunt zetten</h2>
+            <p>
+              Denk aan dingen zoals frameworks, development workflows,
+              designkeuzes, inspiratiebronnen, technische voorbeelden en jouw
+              eigen mening daarover.
+            </p>
+
+            <div class="placeholder">
+              Voeg hier per Weekly Nerd een apart blok toe met datum, onderwerp
+              en jouw reflectie.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen content-screen" id="sprint-0">
+        <div class="screen-inner">
+          <div class="top-bar">
+            <button class="back-button" data-back="home">
+              ← Terug naar home
+            </button>
+          </div>
+
+          <div class="content-card">
+            <h1>Sprint 0</h1>
+            <p>
+              Gebruik dit scherm om de uitkomst van Sprint 0 te beschrijven.
+              Vertel wat je hebt gedaan, waar je tegenaan liep en welke nieuwe
+              inzichten je hebt opgedaan.
+            </p>
+
+            <h2>Reflectie</h2>
+            <p>
+              Je kunt hier ook laten zien hoe jouw startpunt was en hoe jouw
+              ideeën zich verder zijn gaan ontwikkelen.
+            </p>
+
+            <div class="placeholder">
+              Voeg hier je proces, screenshots, feedback en persoonlijke
+              inzichten toe.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen content-screen" id="hackathon">
+        <div class="screen-inner">
+          <div class="top-bar">
+            <button class="back-button" data-back="home">
+              ← Terug naar home
+            </button>
+          </div>
+
+          <section class="section-hero hackathon-hero">
+            <div class="section-hero-overlay"></div>
+            <div class="section-hero-content">
+              <p class="section-label">LEVEL 03</p>
+              <h1>HACKATHON</h1>
+              <p class="section-tagline">
+                Mijn bijdrage, proces en nieuwe inzichten
+              </p>
+            </div>
+          </section>
+
+          <div class="content-card">
+            <h2>Over dit onderdeel</h2>
+            <p>
+              Hier komt jouw inhoud over de hackathon. Beschrijf wat je hebt
+              gedaan, wat de uitkomst was en wat je hiervan hebt geleerd.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen content-screen" id="vakken">
+        <div class="screen-inner">
+          <div class="top-bar">
+            <button class="back-button" data-back="home">
+              ← Terug naar home
+            </button>
+          </div>
+
+          <div class="content-card">
+            <h1>Vakken</h1>
+            <p>
+              Hier kun je per vak of project aangeven wat je belangrijkste
+              lessen waren en wat je daarvan hebt meegenomen.
+            </p>
+
+            <h2>Nieuwe inzichten</h2>
+            <p>
+              Focus op wat jij echt hebt geleerd: technisch, creatief en
+              professioneel.
+            </p>
+
+            <div class="placeholder">
+              Voeg hier een overzicht toe van de vakken met jouw reflectie per
+              onderdeel.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen content-screen" id="meesterproef">
+        <div class="screen-inner">
+          <div class="top-bar">
+            <button class="back-button" data-back="home">
+              ← Terug naar home
+            </button>
+          </div>
+
+          <div class="content-card">
+            <h1>Meesterproef</h1>
+            <p>
+              Dit is je grote eindonderdeel. Beschrijf hier het project, jouw
+              inbreng, de samenwerking, de uitkomst en je reflectie op het hele
+              proces.
+            </p>
+
+            <h2>Reflectie</h2>
+            <p>
+              Kijk terug op wat goed ging, wat beter kon en wat je meeneemt naar
+              de toekomst.
+            </p>
+
+            <div class="placeholder">
+              Voeg hier je rol, deliverables, feedback en persoonlijke evaluatie
+              toe.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen content-screen" id="gesprekken">
+        <div class="screen-inner">
+          <div class="top-bar">
+            <button class="back-button" data-back="home">
+              ← Terug naar home
+            </button>
+          </div>
+
+          <div class="content-card">
+            <h1>Gesprekken</h1>
+            <p>
+              Hier kun je de drie gesprekken verwerken. Beschrijf per gesprek
+              wat er besproken is, wat jij daarvan hebt geleerd en hoe je
+              vooruitkijkt.
+            </p>
+
+            <h2>Blik op de toekomst</h2>
+            <p>
+              Laat zien hoe de gesprekken invloed hebben gehad op jouw
+              ontwikkeling en volgende stappen.
+            </p>
+
+            <div class="placeholder">
+              Voeg hier per gesprek een eigen reflectieblok toe.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
