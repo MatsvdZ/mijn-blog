@@ -1,3 +1,4 @@
+//
 const introScreen = document.getElementById("introScreen");
 const startButton = document.getElementById("startButton");
 
@@ -12,11 +13,21 @@ let current = 0;
 function showScreen(targetId) {
   screens.forEach((screen) => {
     screen.classList.remove("active");
+
+    const hero = screen.querySelector(".section-hero");
+    if (hero) {
+      hero.classList.remove("active-hero");
+    }
   });
 
   const targetScreen = document.getElementById(targetId);
-  if (targetScreen) {
-    targetScreen.classList.add("active");
+  targetScreen.classList.add("active");
+
+  const hero = targetScreen.querySelector(".section-hero");
+  if (hero) {
+    setTimeout(() => {
+      hero.classList.add("active-hero");
+    }, 100);
   }
 }
 

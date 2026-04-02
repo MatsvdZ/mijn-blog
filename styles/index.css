@@ -171,7 +171,9 @@ body::before {
 .screen {
   position: absolute;
   inset: 0;
-  padding: 2rem;
+
+  background: transparent;
+
   opacity: 0;
   pointer-events: none;
   transform: translateX(60px) scale(0.98);
@@ -193,7 +195,7 @@ body::before {
 
 .screen-inner {
   width: 100%;
-  max-width: 1300px;
+
   margin: 0 auto;
 }
 
@@ -405,15 +407,11 @@ body::before {
        CONTENT SCREENS
     ========================= */
 
-.content-screen {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.top-bar {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 2rem;
+.hero-back-button {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 4;
 }
 
 .back-button {
@@ -437,82 +435,32 @@ body::before {
   box-shadow: 0 0 28px rgba(142, 249, 255, 0.3);
 }
 
-.content-card {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  border-radius: 28px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.025)
-    ),
-    linear-gradient(145deg, rgba(22, 33, 62, 0.95), rgba(36, 59, 107, 0.9));
-  border: 2px solid rgba(142, 249, 255, 0.25);
-  box-shadow: 0 0 30px rgba(142, 249, 255, 0.14);
-}
-
-.content-card h1 {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #8ef9ff;
-  text-shadow: 0 0 12px rgba(142, 249, 255, 0.35);
-}
-
-.content-card p {
-  color: #d9e4ff;
-  line-height: 1.7;
-  font-size: 1rem;
-}
-
-.content-card h2 {
-  margin-top: 2rem;
-  color: #dffcff;
-  font-size: 1.35rem;
-}
-
-.content-card .placeholder {
-  margin-top: 1.4rem;
-  padding: 1rem 1.2rem;
-  border-left: 4px solid #8ef9ff;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 12px;
-  color: #cfe3ff;
-}
-
-
-
-/****/
-/* Section Hero */
-/****/
+/* =========================
+       HERO SECTION PER ONDERDEEL
+    ========================= */
 
 .section-hero {
   position: relative;
-  min-height: 55vh;
-  border-radius: 28px;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
+
   display: flex;
-  align-items: end;
+  align-items: center; /* verticaal midden */
+  justify-content: center; /* horizontaal midden */
+
   padding: 2rem;
-  margin-bottom: 2rem;
-  border: 2px solid rgba(142, 249, 255, 0.22);
-  box-shadow: 0 0 30px rgba(142, 249, 255, 0.12);
-  background:
-    linear-gradient(180deg, rgba(8, 12, 24, 0.15), rgba(8, 12, 24, 0.7)),
-    radial-gradient(
-      circle at top,
-      rgba(28, 45, 90, 0.9),
-      rgba(10, 15, 31, 0.95)
-    );
+  text-align: center;
+
+  background: linear-gradient(270deg, #0a0f1f, #16213e, #1c2d5a, #0a0f1f);
+
 }
 
 .section-hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.55)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.6)),
     repeating-linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.02) 0px,
@@ -521,16 +469,24 @@ body::before {
       transparent 4px
     );
   pointer-events: none;
+  z-index: 1;
 }
 
 .section-hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 800px;
+  z-index: 3;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* text animation hero */
+.section-hero-content > * {
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .section-label {
-  margin: 0 0 0.8rem 0;
+  margin: 0 0 1rem 0;
   color: #8ef9ff;
   font-size: 0.9rem;
   letter-spacing: 0.3rem;
@@ -549,13 +505,130 @@ body::before {
     0 0 55px rgba(142, 249, 255, 0.15);
 }
 
+/* section hero animations */
+.section-hero.active-hero .section-label {
+  animation: heroFadeUp 0.6s ease forwards;
+}
+
+.section-hero.active-hero h1 {
+  animation: heroTitleIn 0.9s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.section-hero.active-hero .section-tagline {
+  animation: heroFadeUp 0.6s ease forwards;
+  animation-delay: 0.4s;
+}
+
 .section-tagline {
   margin-top: 1rem;
   margin-bottom: 0;
   font-size: 1.1rem;
   color: #d7e6ff;
-  max-width: 620px;
+
   line-height: 1.5;
+}
+
+.hero-art {
+  position: absolute;
+  right: 4%;
+  bottom: 0;
+  height: 90%;
+  max-width: 42%;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 0 25px rgba(142, 249, 255, 0.2));
+}
+
+/* Achtergrond-images per hero
+       Vervang deze bestandsnamen door je eigen afbeeldingen */
+
+.weekly-hero {
+  background:
+    linear-gradient(180deg, rgba(8, 12, 24, 0.1), rgba(8, 12, 24, 0.75)),
+    url("images/weekly.jpg") center/cover no-repeat;
+
+  
+}
+
+.sprint-hero {
+  background:
+    linear-gradient(180deg, rgba(8, 12, 24, 0.1), rgba(8, 12, 24, 0.75)),
+    url("images/sprint-0.jpg") center/cover no-repeat;
+}
+
+.hackathon-hero {
+  background:
+    linear-gradient(180deg, rgba(8, 12, 24, 0.1), rgba(8, 12, 24, 0.75)),
+    url("images/hackathon.jpg") center/cover no-repeat;
+}
+
+.vakken-hero {
+  background:
+    linear-gradient(180deg, rgba(8, 12, 24, 0.1), rgba(8, 12, 24, 0.75)),
+    url("images/vakken.jpg") center/cover no-repeat;
+}
+
+.meesterproef-hero {
+  background:
+    linear-gradient(180deg, rgba(8, 12, 24, 0.1), rgba(8, 12, 24, 0.75)),
+    url("images/meesterproef.jpg") center/cover no-repeat;
+}
+
+.gesprekken-hero {
+  background:
+    linear-gradient(180deg, rgba(8, 12, 24, 0.1), rgba(8, 12, 24, 0.75)),
+    url("images/gesprekken.jpg") center/cover no-repeat;
+}
+
+/* =========================
+       CONTENT CARD
+    ========================= */
+
+.content-card {
+  max-width: 1000px;
+  margin: 0 auto 3rem auto;
+  padding: 2rem;
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.025)
+    ),
+    linear-gradient(145deg, rgba(22, 33, 62, 0.95), rgba(36, 59, 107, 0.9));
+  border: 2px solid rgba(142, 249, 255, 0.25);
+  box-shadow: 0 0 30px rgba(142, 249, 255, 0.14);
+}
+
+.content-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+  color: #8ef9ff;
+  text-shadow: 0 0 12px rgba(142, 249, 255, 0.25);
+}
+
+.content-card h3 {
+  margin-top: 2rem;
+  color: #dffcff;
+  font-size: 1.2rem;
+}
+
+.content-card p {
+  color: #d9e4ff;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.placeholder {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #8ef9ff;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  color: #cfe3ff;
 }
 
 /* =========================
@@ -612,6 +685,30 @@ body::before {
   }
 }
 
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+    letter-spacing: 0.2rem;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    letter-spacing: 0.05rem;
+  }
+}
+
 /* =========================
        RESPONSIVE
     ========================= */
@@ -659,10 +756,6 @@ body::before {
 }
 
 @media (max-width: 800px) {
-  .screen {
-    padding: 1rem;
-  }
-
   .carousel-wrapper {
     width: 100%;
     height: 340px;
@@ -717,6 +810,30 @@ body::before {
 
   .next {
     right: 0;
+  }
+
+  .section-hero {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .section-hero h1 {
+    font-size: clamp(2.2rem, 12vw, 4rem);
+  }
+
+  .hero-back-button {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .section-tagline {
+    font-size: 1rem;
+  }
+
+  .hero-art {
+    max-width: 50%;
+    height: 75%;
+    right: 2%;
   }
 
   .content-card {
