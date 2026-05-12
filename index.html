@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/index.css" />
-    <title>Document</title>
+    <title>Mijn meesterschaps blog</title>
   </head>
 
   <body>
@@ -78,14 +78,13 @@
         </div>
       </section>
 
+      <!-- MARK: Weekly nerd -->
       <section class="screen content-screen" id="weekly-nerd">
         <div class="screen-inner">
           <section class="section-hero weekly-hero">
             <button class="back-button hero-back-button" data-back="home">
               ← Terug naar home
             </button>
-            <!-- Optioneel extra plaatje -->
-            <!-- <img src="images/parallax-test.jpg" alt="" class="hero-art" /> -->
 
             <div class="section-hero-overlay"></div>
             <div class="section-hero-content">
@@ -98,28 +97,364 @@
           </section>
 
           <div class="content-card">
-            <h2>Weekly Nerd</h2>
-            <p>
-              Hier komt jouw overzicht van alle Weekly Nerd sessies. Je kunt per
-              sessie kort beschrijven welke onderwerpen zijn besproken, welke
-              tools je interessant vond en welke ideeën je hebt meegenomen.
-            </p>
-
-            <h3>Wat je hier kunt zetten</h3>
-            <p>
-              Denk aan frameworks, development workflows, designkeuzes,
-              inspiratiebronnen, technische voorbeelden en jouw eigen mening
-              daarover.
-            </p>
-
+            <h2>Kilian Valkhof</h2>
             <div class="placeholder">
-              Voeg hier per Weekly Nerd een apart blok toe met datum, onderwerp
-              en jouw reflectie.
+              <p>Datum: 04-02</p>
+              <p>Onderwerp: Stop using JS for that</p>
+              <p>Moving features from JS to CSS & HTML</p>
             </div>
+            <p>
+              Tijdens de Weekly Nerd sessie van Kilian Valkhof stond er vooral
+              één centraal idee centraal: probeer zo min mogelijk JavaScript te
+              gebruiken wanneer HTML en CSS hetzelfde probleem kunnen oplossen.
+              Kilian liet zien hoe veel features die vroeger alleen met
+              JavaScript mogelijk waren, nu ook met HTML en CSS gedaan kunnen
+              worden.
+            </p>
+
+            <h3>The Rule of Least Power</h3>
+            <p>
+              The Rule of Least Power is een principe dat stelt dat je altijd de
+              minst krachtige taal moet gebruiken die nog steeds in staat is om
+              het probleem op te lossen. Volgens Kilian zijn HTML en CSS vaak
+              beter geschikt dan JavaScript, omdat ze declaratief zijn. Je
+              beschrijft wat je wilt bereiken, in plaats van hoe je het moet
+              doen. Hierdoor wordt code eenvoudiger, sneller en beter
+              onderhoudbaar.
+            </p>
+
+            <h3>Browsermakers are listening</h3>
+            <p>
+              Ook vertelde Kilian dat browsermakers steeds meer luisteren naar
+              wat developers bouwen. Nu worden features die developers zelf
+              maken steeds vaker native ondersteund door browsers. Een voordeel
+              dat hierbij past is dat de technologie vrijwel altijd backwards
+              compatible blijft. De code die dus vandaag werkt, zou in de
+              toekomst ook nog steeds moeten werken. Hierdoor had ik wel een
+              bijzondere gedachte, namelijk: Alleen omdat ik weet hoe iets met
+              JavaScript kan, betekent dat niet automatisch dat ik het ook met
+              JavaScript moet doen., omdat dit misschien niet de beste oplossing
+              is.
+            </p>
+
+            <h3>Moderne CSS & HTML features</h3>
+            <p>
+              Kilian liet ons ook een paar voorbeelden zien van moderne CSS en
+              HTML features. Zo heeft hij ons laten zien hoe je tegenwoordig
+              veel makkelijker custom switches kunt maken en het stijlen van
+              checkboxes en radio buttons veel makkelijker is geworden. Normaal
+              bepaalt de browser dit, maar met
+              <code>appearance: none;</code> kun je die styling verwijderen, en
+              zelf ontwerpen. Ook accessibility speelde hierbij een grote rol,
+              want met <code>:focus-visible</code> kun je toetsenbordgebruikers
+              een duidelijke focus geven, zonder dat dit de ervaring van
+              muisgebruikers verpest.
+            </p>
+            <p>
+              Verder heeft hij het nog gehad over smooth scrolling en in-page
+              transitions. Ook details, summary en dialog werden nog besproken.
+            </p>
+
+            <p>
+              Deze talk heeft mij iets anders laten nadenken over frontend
+              development. Ik kijk dus niet meteen naar JavaScript, maar ik kijk
+              eerst of HTML en CSS het probleem al kunnen oplossen. Het was
+              interessant om te zien hoeveel moderen features er tegenwoordig
+              zijn, en dat dit makkelijker, sneller en §beter is dan JavaScript.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h2>Peter-Paul Koch</h2>
+            <div class="placeholder">
+              <p>Datum: 19-02</p>
+              <p>
+                Onderwerp: Browser and support detection: Geschiedenis van
+                browsers
+              </p>
+            </div>
+            <p>
+              Tijdens deze Weekly Nerd sessie vertelde Peter-Paul Koch over
+              browsers, rendering engines en hoe browsers omgaan met support en
+              compatibility. Ik vond het vooral interessant om meer te leren
+              over wat er eigenlijk gebeurt voordat een website zichtbaar wirdt
+              op je beeld.
+            </p>
+
+            <h3>Verschillende onderdelen</h3>
+            <p>
+              Koch legde uit dat een browser uit verschillende onderdelen
+              bestaat, zoals HTML- en CSS-parser, de DOM, de AOM en een
+              JavaScript engine. Vooral het verschil tussen JavaScript zelf en
+              de DOM vond ik interessant. JavaScript is een programmeertaal,
+              terwijl de DOM zorgt dat JavaScript elementen op een pagina kan
+              aanpassen.
+            </p>
+            <h3>Rendering & performance</h3>
+            <p>
+              Koch gaf ook een beetje uitleg over rendering en performance. Zo
+              vertelde hij dat layoutberekeningen zwaar zijn voor browsers,
+              daarom is het belangrijk om layouts simpel te houden. Zijn advies
+              was als volgt: "Keep it stupid simple". Dat neem ik mee, omdat ik
+              zelf soms geneigd ben im dingen onnodig complex te maken.
+            </p>
+
+            <h3>Render blocking</h3>
+            <p>
+              CSS en JavaScript kunnen het laden van een pagina vertragen.
+              vooral het verschill tussen defer en async vond ik handig om te
+              weten.
+            </p>
+            <ul>
+              <li>Defer voert scripts uit nadat de HTML geladen is.</li>
+              <li>
+                Async laat de browser zelf bepalen wanneer het script uitgevoerd
+                wordt.
+              </li>
+            </ul>
+
+            <h3>Backward compatibility</h3>
+            <p>
+              Browsers moeten vrijwel alles wat ooit heeft gewerkt blijven
+              ondersteunen. Daardoor werken dus ook oudere HTML features nog.
+              Dit vond ik interessant, omdat browsers daardoor dus met veel oude
+              technieken moeten blijven werken.
+            </p>
+
+            <h3>Browser geschiedenis</h3>
+            <p>
+              Op het einde vertelde Koch nog wat over de geschiedenis van
+              browsers zelf, wat ik ook erg interessant vond. Hij vertelde over
+              de eerste browser van Tim Berners-Lee tot de moderne browsers
+              zoals Chrome en zelfs wat nieuwere broswers zoals Ladybird. Wat ik
+              uit deze sessie heb gehaald, is meer begrip voor hoe browsers
+              werken en hoe belangrijk performance en makkelijke code is.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h2>Nils Binder</h2>
+            <div class="placeholder">
+              <p>Datum: 04-03</p>
+              <p>Onderwerp: CSS to the rescue</p>
+            </div>
+            <p>
+              Tijdens deze Weekly Nerd sessie vertelde Nils Binder over design,
+              CSS en moderne manieren van webdevelopment.
+            </p>
+
+            <h3>Waar heeft hij aan gewerkt?</h3>
+            <p>
+              Nils werkt bij 9elements, waar ze werken met verschillende units,
+              namelijk:
+            </p>
+            <ul>
+              <li>Communication Design</li>
+              <li>Product Development</li>
+              <li>Web Development</li>
+            </ul>
+            <p>
+              Hij vertelde over andere projecten waar hij aan heeft gewerkt,
+              zoals de app van FC Schalke 04 (erg leuk om te horen als voetbal
+              fan) en een accessibility project voor OECD. Hier ging het vooral
+              om kleurgebruik en toegankelijkheid, zodat informatie en grafieken
+              duidelijk blijven voor iedereen.
+            </p>
+            <h3>Then and now in webdesign</h3>
+            <p>
+              Een onderwerp wat ik erg interessant vond, was het verschil tussen
+              vroeger en nu binnen webdesign. Vroeger ontwierpen designers vaak
+              in Adobe Photoshop, terwijl nu bijna iedereen Figma gebruikt.
+              Volgens Nils lijkt Figma veel meer op hoe CSS daadwerkelijk werkt,
+              met dingen zoals flecbox, gap, padding en variabelen. Daardoor
+              sluiten design en development beter op elkaar aan.
+            </p>
+            <h3>Layouts</h3>
+            <p>
+              Ook liet Nils zien hoe belangrijk verhoudingen en layouts zijn. In
+              plaats van alleen naar pixels te kijken, moet je kijken naar de
+              verhouding tussen elementen. Hij gebruikte voorbeelden met CSS
+              grid en fr units om layouts flexibel en responsive te maken. Dit
+              vond ik interessant, omdat ik zelf vaak nog moeite heb met het
+              maken van goede layouts.
+            </p>
+            <p>
+              Ook animaties kwamen nog voorbij, zoals het gebruik van
+              <code>steps()</code>. Hij vertelde ook nog even over subgrid en
+              view transitions. Vooral de view transitions vond ik interessant,
+              omdat dit een nieuwe manier is om soepele animaties te maken
+              tussen pagina's zonder JavaScript.
+            </p>
+            <p>
+              Wat ik dus uit deze sessie heb gehaald, is dat CSS steeds sterker
+              wordt en dat design en development steeds dichter naar elkaar toe
+              groeien. Ook ben ik dus meer gaan nadeken over layouts en
+              verhoudingen in plaats van alleen maar naar pixels te kijken.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h2>Robert Boersma & Yolijn van der Kolk</h2>
+            <div class="placeholder">
+              <p>Datum: 12-03</p>
+              <p>
+                Onderwerp: FF formulieren maken met NL design System richtlijnen
+              </p>
+            </div>
+            <p>
+              Tijdens deze Weekly Nerd sessie vertelden Robert Boersma en Yolijn
+              van der Kolk over het ontwerpen van formulieren volgen de
+              richtlijnen van het NL Design System. De sessie draaide vooral om
+              gebruiksvriendelijkheid en toegankelijkheid. Wat mij meteen
+              opviel, was hoeveel details belangrijk zijn bij het maken van een
+              goed formulier.
+            </p>
+            <h3>De opbouw</h3>
+            <p>
+              Er werd eerst uitgelegd hoe een formulier logisch opgebouwd moet
+              zijn. Dit moet met een duidelijke introductie, de noodzakelijke
+              informatie, gebruikers hun gegevens laten controleren en na het
+              verzenden een duidelijke bevestiging geven. Ook werd er benadrukt
+              dat het fijn is als gebruikers tussentijds een formulier op kunnen
+              slaan.
+            </p>
+            <p>
+              Daarnaast ging het veel over toegankelijkheid. Labels moeten
+              altijd zichtbaar zijn en gekoppeld worden met een label. alleen
+              placeholder tekst is dus niet voldoende. Ook foutmeldingen en
+              beschrijvingen moeten gekoppeld zijn aan invoervelden met
+              bijvoorbeeld
+              <code>aria-describedby</code>, zodat een screenreader deze goed
+              kan voorlezen.
+            </p>
+            <p>
+              Verder kwamen er vooral veel praktische designregels voorbij,
+              zoals: Componenten moeten voldoende kleurcontrast hebben, knoppen
+              moeten groot genoeg zijn (bv. minimaal 44x44 pixels). Ook de flow
+              van het formulier moet logisch zijn, zoals consistente navigatie
+              en zichtbare voortgang (stap 2 van 4).
+            </p>
+            <p>
+              Wat ik vooral uit deze sessie heb gehaald is dat een formulier
+              meer is dan alleen een paar invoervelden. Kleine keuzes die je
+              maakt voor labels, foutmeldingen, navigatie en screenreaders maken
+              een groot verschil voor gebruikerservaring en toegankelijkheid.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h2>Rosa</h2>
+            <div class="placeholder">
+              <p>Datum: 02-04</p>
+              <p>Onderwerp: Hackers United</p>
+            </div>
+            <p>
+              Tijdens deze Weekly Nerd verteld Rosa over hacking,
+              onafhankelijkheid van grote tech-bedrijven en het belang van zelf
+              controle houden. De sessie was wat korter en ging minder over
+              traditionele frontend development en juist wat meer over alles
+              daarachter.
+            </p>
+            <h3>Wat is een hacker</h3>
+            <p>
+              Ze opende haar talk met de vraag: wat is een hacker eigenlijk? Het
+              ging niet alleen over iemand die systemen kraakt, maar vooral over
+              mensen die begrijpen hoe systemen werken en zelf oplossingen
+              proberen te bouwen. Een belangrijk punt was dat je zoveel mogelijk
+              zelf moet proberen te maken, zodat je hier zelf de controle over
+              houdt.
+            </p>
+            <h3>Planned obsolescence</h3>
+            <p>
+              Door Planned obsolescence worden apparaten sneller vervangen in
+              plaats van gerepareerd. Daardoor groeit de afhankelijkheid van
+              grote techbedrijven. Dit geldt niet alleen voor consumenten, maar
+              ook voor bedrijven en overheden.
+            </p>
+            <p>
+              Wat ik interessant vond, was hoe ze keek naar oplossingen die low
+              tech waren. Zo liet ze een voorbeeld zien van projecten die
+              draaien op oude hardware, zoals een computer uit 2007 die uit het
+              afval was gehaald. Hierdoor moet je dus anders nadenken over hoe
+              je bijvoorbeeld websites bouwt. Zware frameworks werken minder
+              goed, waardoor simpele en efficiënte oplossingen belangrijker
+              worden.
+            </p>
+            <h3>Static site generators</h3>
+            <p>
+              Ook kwamen static site generators voorbij, zoals Eleventy (11ty).
+              Volgens Rosa hebben die veel voordelen: minder belasting op
+              servers, leesbare code en als alles faalt heb je altijd nog de
+              markdownbestanden. Dat idee vond ik interessant, omdat het laat
+              zien hoe belangrijk simpele en duurzamen technologie eigenlijk kan
+              zijn.
+            </p>
+            <p>
+              Wat ik vooral uit deze sessie heb gehaald, is dat technologie niet
+              persé nieuwer of complexer hoeft te worden. Soms zijn simpele en
+              lichte oplossingen sterker en duurzamer. Ook ben ik meer gaan
+              nadenken over hoeveel controle je uit handen geeft wanneer je
+              afhankelijk bent van grote platforms en frameworks.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <h2>Johann Huijkman</h2>
+            <div class="placeholder">
+              <p>Datum: 09-04</p>
+              <p>Onderwerp: Accessibility</p>
+            </div>
+            <p>
+              Tijdens deze Weekly Nerd vertelde Johann Huijkman over
+              toegankelijkheid en waarom toegankelijk ontwerpen verder gaat dan
+              alleen de WCAG-richtlijnen. Hij werkte jarenlang bij Q42 en is
+              later overgestapt naar Stichting Accessibility.
+            </p>
+            <h3>Theorie VS praktijk</h3>
+            <p>
+              Een belangrijk punt uit de sessie was de iets theoretisch
+              toegankelijk kan zijn, maar in de praktijk alsnog lastig te
+              gebruiken blijkt. Daarom is het testen met echte gebruikers
+              volgens hem veel belangrijker dan een checklist volgen. Ook
+              vertelde hij dat de WCAG-richtlijnen vaak verkeerd geïnterpreteerd
+              worden. Bijvoorbeeld: niet alles hoeft een alt-tekst te hebben.
+              Decoratieve afbeeldingen hoeven dat juist niet.
+            </p>
+            <h3>Screenreaders</h3>
+            <p>
+              Ook heeft hij het gehad over screenreaders. Die hebben al heel
+              veel ingebouwde functionaliteiten en shortcuts, waardoor
+              gebruikers niet altijd de hele pagina hoeven door te lopen.
+              Hierdoor besefte ik me dat je goed moet testen voordat je zelf
+              extra oplossingen probeert te bedenken.
+            </p>
+            <h3>De gebruikers</h3>
+            <p>
+              Tijdens deze sessie liet Johann drie verschillende gebruikers zien
+              als voorbeeld. Elke gebruiker had een net wat andere beperking.
+              Het interessante hieraan was om te zien dat er best veel verschil
+              zit tussen de soort toegankelijkheid die een persoon nodig kan
+              hebben. Bij bijvoorbeeld Martijn (slechtziend) ging het vooral om
+              schaalbaarheid, contrast en duidelijke focusindicatoren. Bij
+              Naduah (mobiliteitsproblemen & prikkelgevoelig) zijn vooral
+              rustige layouts belangrijk, en weinig handelingen. Ook het opslaan
+              van gegevens is belangrijk, omdat lange processen vermoeiend zijn.
+              En Guido (autisme) raakt snel overprikkeld door teveel informatie
+              en visuele effecten. Hier zijn duidelijke instructies,
+              voorspelbaarheid en een rustige interface belangrijk.
+            </p>
+            <p>
+              Wat ik dus vooral uit deze sessie heb gehaald, is dat
+              toegankelijkheid niet één vaste oplossing heeft. Verschillende
+              gebruikers hebben compleet andere behoeften. Hierdoor moet je als
+              developer geen aannames maken over wie jouw website gebruikt en
+              hoe die gebruikt wordt.
+            </p>
           </div>
         </div>
       </section>
 
+      <!-- MARK: Sprint 0 -->
       <section class="screen content-screen" id="sprint-0">
         <div class="screen-inner">
           <section class="section-hero sprint-hero">
@@ -139,27 +474,52 @@
           </section>
 
           <div class="content-card">
+            <div class="placeholder">
+              <p>
+                Link naar live site:
+                <a href="https://matsvdz.github.io/dit-ben-ik/">Dit ben ik</a>
+              </p>
+            </div>
             <h2>Sprint 0</h2>
             <p>
-              Gebruik dit scherm om de uitkomst van Sprint 0 te beschrijven.
-              Vertel wat je hebt gedaan, waar je tegenaan liep en welke nieuwe
-              inzichten je hebt opgedaan.
+              Tijdens sprint 0 heb ik een persoonlijke website gemaakt die als
+              een soort introductie van mijzelf en mijn interesses dient. In het
+              begin had ik een heel ander concept met een landschap en een weg
+              waar ik als het ware overheen reed met mijn motor. Maar tijdens
+              het ontwerlen heb ik besloten om dit helemaal om te gooien naar
+              een futuristische Tron-achtige omgeving met felle neonkleuren en
+              animaties. Ik heb ook voor het eerst gewerkt met horizontaal
+              scrollen zodat de verschillende delem van de site beter samen
+              kwamen. Daarnaast heb ik geëxperimenteerd met animaties zoals
+              glitcheffecten, hover animaties, pulsing neon tekst animaties en
+              een custom cursor. Ook heb ik geoefend met data uit de FDND API
+              dynamisch inladen. Hierbij heb ik er ook voor gezorgd dat je
+              andere mensen in de database kan opzoeken als zogenaamde
+              'players.' Verder heb ik nog een light en een darkmode gemaakt,
+              muziek toegevoegd en veel aandacht besteed aan responsiveness en
+              het netjes structureren van mjin code.
             </p>
-
-            <h3>Reflectie</h3>
+            <h3>Mijn nieuwe inzichten</h3>
             <p>
-              Je kunt hier ook laten zien hoe jouw startpunt was en hoe jouw
-              ideeën zich verder hebben ontwikkeld.
+              Wat ik vooral uit sprint 0 heb gehaald, is hoe belangrijk een
+              sterk concept en een sterke basis zijn, voordat je begint met
+              coderen. Ik merkte dat mijn project pas goed begon te werken toen
+              ik een duidelijke stijl had gekozen en een idee had van de layout
+              die ik wou gebruiken. Daarnaast heb ik redelijk wat geleerd over
+              animeren met CSS, responsiveness en het combineren van vormgeving
+              en interactie. Ook besefte ik me dat experimenteren een belangrijk
+              onderdeel is van het process. Door te experimenteren kwam ik uit
+              bij mijn uiteindelijke concept. Veel van wat ik aan het begin
+              wilde lukte eerst niet, of kwamen niet helemaal lekker samen. Maar
+              door steeds verschillende dingen te proberen kwam ik steeds
+              verder. Daarnaast ben ik iets bewuster gaan nadenken over de
+              kwaliteit, structuur en consistentie van de code die ik schrijf.
             </p>
-
-            <div class="placeholder">
-              Voeg hier je proces, screenshots, feedback en persoonlijke
-              inzichten toe.
-            </div>
           </div>
         </div>
       </section>
 
+      <!-- MARK: Hackathon -->
       <section class="screen content-screen" id="hackathon">
         <div class="screen-inner">
           <section class="section-hero hackathon-hero">
@@ -199,6 +559,7 @@
         </div>
       </section>
 
+      <!-- MARK: Vakken -->
       <section class="screen content-screen" id="vakken">
         <div class="screen-inner">
           <section class="section-hero vakken-hero">
@@ -239,6 +600,7 @@
         </div>
       </section>
 
+      <!-- MARK: Meesterproef -->
       <section class="screen content-screen" id="meesterproef">
         <div class="screen-inner">
           <section class="section-hero meesterproef-hero">
@@ -280,6 +642,7 @@
         </div>
       </section>
 
+      <!-- MARK: Gesprekken -->
       <section class="screen content-screen" id="gesprekken">
         <div class="screen-inner">
           <section class="section-hero gesprekken-hero">
@@ -319,6 +682,6 @@
         </div>
       </section>
     </main>
-    <script src="scripts/index.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
