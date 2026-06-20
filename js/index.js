@@ -185,6 +185,68 @@ window.addEventListener("load", () => {
 });
 
 /* =========================
+   MARK: VAKKEN
+========================= */
+
+const eyebleedButton = document.getElementById("eyebleedButton");
+const visualModeButton = document.getElementById("visualModeButton");
+const planetButton = document.getElementById("planetButton");
+const openDevLog = document.getElementById("openDevLog");
+const closeDevLog = document.getElementById("closeDevLog");
+const devLogPanel = document.getElementById("devLogPanel");
+
+if (eyebleedButton) {
+  eyebleedButton.addEventListener("click", () => {
+    document.body.classList.add("eyebleed-active");
+
+    setTimeout(() => {
+      document.body.classList.remove("eyebleed-active");
+    }, 2000);
+  });
+}
+
+if (visualModeButton) {
+  visualModeButton.addEventListener("click", () => {
+    document.body.classList.toggle("visual-mode-active");
+  });
+}
+
+if (planetButton) {
+  planetButton.addEventListener("click", () => {
+    document.body.classList.toggle("planet-scan-active");
+  });
+}
+
+if (openDevLog && devLogPanel) {
+  openDevLog.addEventListener("click", () => {
+    devLogPanel.classList.add("active");
+  });
+}
+
+if (closeDevLog && devLogPanel) {
+  closeDevLog.addEventListener("click", () => {
+    devLogPanel.classList.remove("active");
+  });
+}
+
+/* =========================
+   MARK: HACKATHON
+========================= */
+
+const miniBlackholeButton = document.getElementById("miniBlackholeButton");
+const hackathonMission = document.querySelector(".hackathon-mission");
+
+if (miniBlackholeButton && hackathonMission) {
+  miniBlackholeButton.addEventListener("click", () => {
+    hackathonMission.classList.add("blackhole-active");
+
+    setTimeout(() => {
+      hackathonMission.classList.remove("blackhole-active");
+    }, 1200);
+  });
+}
+
+/* =========================
    INIT
 ========================= */
 
