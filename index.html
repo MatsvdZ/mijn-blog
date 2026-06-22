@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +13,15 @@
   </head>
 
   <body>
+    <a href="#home" class="skip-link">Spring naar content</a>
+    <button
+      id="theme-btn"
+      class="theme-btn"
+      type="button"
+      aria-label="Wissel tussen blauw en rood thema"
+    >
+      <img src="images/themeicon.png" alt="Switch van thema" class="theme-btn-icon">
+    </button>
     <div class="intro-screen" id="introScreen">
       <div class="intro-overlay"></div>
 
@@ -27,66 +36,78 @@
 
     <main class="app">
       <!-- MARK: Intro screen -->
-      <section class="screen home-screen active" id="home">
+      <section class="screen home-screen active" id="home" aria-hidden="false">
         <div class="screen-inner">
           <div class="home-content">
             <h1 class="home-title">Meesterschap Blog</h1>
             <p class="home-subtitle">Kies een level om verder te gaan</p>
 
             <div class="carousel-wrapper">
-              <button class="nav prev" aria-label="Vorige slide">◀</button>
+              <button class="nav prev" type="button" aria-label="Vorige slide">
+                ◀
+              </button>
 
               <div class="carousel">
-                <div class="card" data-target="weekly-nerd">
+                <button class="card" data-target="weekly-nerd">
                   <h2>Weekly Nerd</h2>
                   <p>
                     Verslagen, tools, voorbeelden en ideeën die ik interessant
                     vond.
                   </p>
-                </div>
+                </button>
 
-                <div class="card" data-target="sprint-0">
+                <button class="card" data-target="sprint-0">
                   <h2>Sprint 0</h2>
                   <p>
                     Mijn beginpunt, aanpak en nieuwe inzichten uit de eerste
                     sprint.
                   </p>
-                </div>
+                </button>
 
-                <div class="card" data-target="hackathon">
+                <button class="card" data-target="hackathon">
                   <h2>Hackathon</h2>
                   <p>Mijn bijdrage, de uitkomst en wat ik ervan heb geleerd.</p>
-                </div>
+                </button>
 
-                <div class="card" data-target="vakken">
+                <button class="card" data-target="vakken">
                   <h2>Vakken</h2>
                   <p>
                     De belangrijkste lessen en inzichten uit verschillende
                     vakken.
                   </p>
-                </div>
+                </button>
 
-                <div class="card" data-target="meesterproef">
+                <button class="card" data-target="meesterproef">
                   <h2>Meesterproef</h2>
                   <p>Mijn inbreng, proces, eindresultaat en reflectie.</p>
-                </div>
+                </button>
 
-                <div class="card" data-target="gesprekken">
+                <button class="card" data-target="gesprekken">
                   <h2>Gesprekken</h2>
                   <p>
                     Reflecties op drie gesprekken en een blik op de toekomst.
                   </p>
-                </div>
+                </button>
               </div>
 
-              <button class="nav next" aria-label="Volgende slide">▶</button>
+              <button
+                class="nav next"
+                type="button"
+                aria-label="Volgende slide"
+              >
+                ▶
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       <!-- MARK: Weekly nerd -->
-      <section class="screen content-screen" id="weekly-nerd">
+      <section
+        class="screen content-screen"
+        id="weekly-nerd"
+        aria-hidden="true"
+      >
         <div class="screen-inner">
           <section class="section-hero weekly-hero">
             <button class="back-button hero-back-button" data-back="home">
@@ -991,7 +1012,7 @@
       </section>
 
       <!-- MARK: Sprint 0 -->
-      <section class="screen content-screen" id="sprint-0">
+      <section class="screen content-screen" id="sprint-0" aria-hidden="true">
         <div class="screen-inner">
           <section class="section-hero sprint-hero">
             <button class="back-button hero-back-button" data-back="home">
@@ -1152,7 +1173,7 @@
       </section>
 
       <!-- MARK: Hackathon -->
-      <section class="screen content-screen" id="hackathon">
+      <section class="screen content-screen" id="hackathon" aria-hidden="true">
         <div class="screen-inner">
           <section class="section-hero hackathon-hero">
             <button class="back-button hero-back-button" data-back="home">
@@ -1266,7 +1287,7 @@
       </section>
 
       <!-- MARK: Vakken -->
-      <section class="screen content-screen" id="vakken">
+      <section class="screen content-screen" id="vakken" aria-hidden="true">
         <div class="screen-inner">
           <section class="section-hero vakken-hero">
             <button class="back-button hero-back-button" data-back="home">
@@ -1521,7 +1542,11 @@
       </section>
 
       <!-- MARK: Meesterproef -->
-      <section class="screen content-screen" id="meesterproef">
+      <section
+        class="screen content-screen"
+        id="meesterproef"
+        aria-hidden="true"
+      >
         <div class="screen-inner">
           <section class="section-hero meesterproef-hero">
             <button class="back-button hero-back-button" data-back="home">
@@ -1719,6 +1744,44 @@
                   een speelse en toegankelijke manier onderdeel kunt maken van
                   een verhaal.
                 </p>
+
+                <p>
+                  Mijn grootste leermoment tijdens deze meesterproef was het
+                  iteratief werken op basis van feedback. Waar ik eerder geneigd
+                  was om een ontwerp vooral vanuit mijn eigen perspectief te
+                  beoordelen, heb ik nu ervaren hoe waardevol het is om een
+                  ontwerp meerdere keren aan te passen op basis van input van
+                  gebruikers, opdrachtgevers en medestudenten. Vooral de
+                  wereldkaart heeft verschillende iteraties doorgemaakt voordat
+                  deze echt aansloot bij de identiteit van De Visdeurbel.
+                </p>
+
+                <p>
+                  Wat mij meeviel was hoe snel ik nieuwe technieken zoals D3.js
+                  en complexe SVG-animaties kon toepassen zodra ik een goed plan
+                  had gemaakt. Ik merkte dat een sterke voorbereiding veel
+                  onzekerheid tijdens het ontwikkelen wegneemt. Wat ik nog
+                  lastig vond was het vinden van de juiste balans tussen
+                  functionaliteit, vormgeving en toegankelijkheid. Soms wilde ik
+                  visueel iets toevoegen dat uiteindelijk minder bruikbaar bleek
+                  voor de gebruiker. Hierdoor heb ik geleerd om ontwerpkeuzes
+                  altijd te onderbouwen vanuit het doel van de gebruiker.
+                </p>
+                <p>
+                  Waar ik het meest trots op ben is dat ik een datavisualisatie
+                  heb ontwikkeld die niet alleen functioneel is, maar ook echt
+                  aansluit bij de identiteit van De Visdeurbel. De combinatie
+                  van interactieve kaarten, animaties, huisstijl en
+                  toegankelijkheidsvoorzieningen zorgt ervoor dat de
+                  visualisatie meer is geworden dan alleen een overzicht van
+                  data. Het vertelt een verhaal over de bezoekers van De
+                  Visdeurbel en maakt de informatie op een toegankelijke en
+                  aantrekkelijke manier inzichtelijk. Daarnaast ben ik trots op
+                  de groei die ik heb doorgemaakt in mijn manier van werken: ik
+                  ontwerp bewuster, werk meer vanuit feedback en durf meer
+                  aandacht te besteden aan details die een ontwerp naar een
+                  hoger niveau tillen.
+                </p>
               </div>
             </section>
           </div>
@@ -1726,7 +1789,7 @@
       </section>
 
       <!-- MARK: Gesprekken -->
-      <section class="screen content-screen" id="gesprekken">
+      <section class="screen content-screen" id="gesprekken" aria-hidden="true">
         <div class="screen-inner">
           <section class="section-hero gesprekken-hero">
             <button class="back-button hero-back-button" data-back="home">
@@ -1872,8 +1935,60 @@
                   <div class="conversation-content">
                     <h2>Gesprek 3</h2>
                     <p>
-                      Deze reflectie wordt later toegevoegd na mijn laatste
-                      gesprek.
+                      Tijdens mijn laatste gesprek hebben we teruggekeken op
+                      mijn leerdoelen en de ontwikkeling die ik tijdens de
+                      meesterproef heb doorgemaakt. Waar ik aan het begin van de
+                      minor vooral bezig was met het bouwen zelf, ben ik
+                      gedurende de minor steeds bewuster gaan nadenken over het
+                      proces dat daaraan voorafgaat.
+                    </p>
+
+                    <h3>Reflectie op mijn leerdoelen</h3>
+
+                    <p>
+                      Een van mijn leerdoelen was om een sterker fundament te
+                      leggen voordat ik begon met coderen. In eerdere projecten
+                      startte ik vaak direct met ontwikkelen, waardoor ik later
+                      regelmatig terug moest komen op ontwerp- of
+                      structuurkeuzes. Tijdens de meesterproef heb ik daarom
+                      meer tijd besteed aan onderzoek, schetsen, wireframes en
+                      verschillende iteraties. Hierdoor kon ik gerichter werken
+                      en waren er tijdens het bouwen minder grote wijzigingen
+                      nodig.
+                    </p>
+
+                    <p>
+                      Daarnaast wilde ik mezelf uitdagen om meer aandacht te
+                      besteden aan detail en beweging in mijn ontwerpen. Dit heb
+                      ik toegepast binnen de interactieve wereldkaart die ik
+                      ontwikkelde met D3.js. Door gebruik te maken van
+                      animaties, hover-effecten, actieve staten en bewegende
+                      SVG-routes ontdekte ik hoe interactie niet alleen visueel
+                      aantrekkelijk kan zijn, maar ook kan helpen om een verhaal
+                      te vertellen en data begrijpelijker te maken.
+                    </p>
+
+                    <p>
+                      Mijn derde leerdoel was om meer samen te werken met andere
+                      studenten en gezamenlijk tot moderne oplossingen te komen.
+                      Tijdens de meesterproef heb ik actief feedback gevraagd
+                      aan teamgenoten en hun inzichten gebruikt om mijn werk
+                      verder te verbeteren. Daarnaast hebben we technische
+                      uitdagingen samen besproken en kennis gedeeld. Hierdoor
+                      heb ik niet alleen nieuwe technieken geleerd, maar ook
+                      ervaren hoe samenwerking is binnen een ontwikkelproces.
+                    </p>
+
+                    <h3>Mijn conclusie</h3>
+
+                    <p>
+                      Terugkijkend ben ik tevreden met de ontwikkeling die ik
+                      heb doorgemaakt. Ik merk dat ik bewuster ontwerp voordat
+                      ik bouw, meer aandacht besteed aan interactie en detail,
+                      en actiever gebruikmaak van feedback en kennis van
+                      anderen. Deze inzichten neem ik mee naar toekomstige
+                      projecten en vormen een sterke basis voor mijn verdere
+                      ontwikkeling als developer/ontwerper.
                     </p>
                   </div>
                 </article>

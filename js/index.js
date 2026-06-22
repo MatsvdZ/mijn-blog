@@ -37,50 +37,61 @@ if (startButton) {
 ========================= */
 
 function showScreen(targetId) {
-  sessionStorage.setItem("activeScreen", targetId);
+  const targetScreen =
+    document.getElementById(targetId) || document.getElementById("home");
+
+  sessionStorage.setItem("activeScreen", targetScreen.id);
 
   screens.forEach((screen) => {
-    screen.classList.remove("active");
+    const isActive = screen === targetScreen;
+
+    screen.classList.toggle("active", isActive);
+    screen.setAttribute("aria-hidden", String(!isActive));
 
     const hero = screen.querySelector(".section-hero");
     if (hero) {
       hero.classList.remove("active-hero");
+
+      if (isActive) {
+        setTimeout(() => {
+          hero.classList.add("active-hero");
+        }, 100);
+      }
     }
   });
 
-  const targetScreen = document.getElementById(targetId);
-
-  if (!targetScreen) {
-    showScreen("home");
-    return;
-  }
-
-  targetScreen.classList.add("active");
-
-  const hero = targetScreen.querySelector(".section-hero");
-
-  if (hero) {
-    setTimeout(() => {
-      hero.classList.add("active-hero");
-    }, 100);
-  }
+  updateCarousel();
 }
-
 /* =========================
    CAROUSEL
 ========================= */
 
 function updateCarousel() {
   cards.forEach((card, i) => {
-    card.className = "card";
+    card.classList.remove(
+      "active-card",
+      "left-1",
+      "right-1",
+      "left-2",
+      "right-2",
+      "hidden",
+    );
+
+    card.setAttribute("tabindex", "-1");
 
     let offset = i - current;
 
-    if (offset < -3) offset += cards.length;
-    if (offset > 3) offset -= cards.length;
+    if (offset < -Math.floor(cards.length / 2)) {
+      offset += cards.length;
+    }
+
+    if (offset > Math.floor(cards.length / 2)) {
+      offset -= cards.length;
+    }
 
     if (offset === 0) {
       card.classList.add("active-card");
+      card.setAttribute("tabindex", "0");
     } else if (offset === -1) {
       card.classList.add("left-1");
     } else if (offset === 1) {
@@ -101,6 +112,7 @@ if (nextBtn) {
   nextBtn.addEventListener("click", () => {
     current = (current + 1) % cards.length;
     updateCarousel();
+    cards[current].focus();
   });
 }
 
@@ -108,15 +120,23 @@ if (prevBtn) {
   prevBtn.addEventListener("click", () => {
     current = (current - 1 + cards.length) % cards.length;
     updateCarousel();
+    cards[current].focus();
   });
 }
 
 cards.forEach((card, index) => {
   card.addEventListener("click", () => {
     if (index !== current) return;
+    showScreen(card.dataset.target);
+  });
 
-    const target = card.dataset.target;
-    showScreen(target);
+  card.addEventListener("keydown", (event) => {
+    if (index !== current) return;
+
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      showScreen(card.dataset.target);
+    }
   });
 });
 
@@ -142,7 +162,12 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       showScreen("home");
     }
+    return;
+  }
 
+  const activeElement = document.activeElement;
+
+  if (activeElement === nextBtn || activeElement === prevBtn) {
     return;
   }
 
@@ -247,10 +272,38 @@ if (miniBlackholeButton && hackathonMission) {
 }
 
 /* =========================
+   THEME TOGGLE
+========================= */
+
+const btn = document.querySelector("#theme-btn");
+
+if (btn) {
+  btn.addEventListener("click", () => {
+    const root = document.documentElement;
+
+    if (root.dataset.theme === "red") {
+      root.dataset.theme = "";
+    } else {
+      root.dataset.theme = "red";
+    }
+  });
+}
+
+/* =========================
    INIT
 ========================= */
 
-updateCarousel();
-
 const savedScreen = sessionStorage.getItem("activeScreen") || "home";
-showScreen(savedScreen);
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateCarousel();
+  showScreen(savedScreen);
+
+  requestAnimationFrame(() => {
+    updateCarousel();
+  });
+
+  setTimeout(() => {
+    updateCarousel();
+  }, 100);
+});
